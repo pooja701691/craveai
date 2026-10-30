@@ -3,7 +3,7 @@ import express from "express";
 import {
   chatWithAssistant,
   getChatHistory
-} from "../controllers/chatController.js";
+} from "../controllers/chatcontroller.js";
 
 const router = express.Router();
 
