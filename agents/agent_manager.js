@@ -139,3 +139,15 @@ export const agentManager = createAgent({
 });
 
 // 6. Function to use in API
+export async function runAgentManager(userMessage) {
+  const result = await agentManager.invoke({
+    messages: [
+      {
+        role: "user",
+        content: userMessage,
+      },
+    ],
+  });
+
+  return extractResponse(result);
+}
