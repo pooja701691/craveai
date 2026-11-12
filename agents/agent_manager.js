@@ -19,17 +19,6 @@ function extractResponse(result) {
   const lastMessage = result?.messages?.at(-1);
   const content = lastMessage?.content;
 
-  if (typeof content === "string") {
-    return content;
-  }
-
-  if (Array.isArray(content)) {
-    return content
-      .map((part) =>
-        typeof part === "string" ? part : part.text || ""
-      )
-      .join("");
-  }
 
   return JSON.stringify(content ?? result);
 }
